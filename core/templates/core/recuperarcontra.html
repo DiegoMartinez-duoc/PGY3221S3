@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+    {% load static %}
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SayThread</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'core/css/page.css' %}">
+    </head>
+    <body>
+       
+        <div class="wrapper">
+            <div class="titulo">
+                <img id="logo-imagen" src="{% static 'core/img/threadIcon.png' %}"/>
+                <a id="gothread" href="{% url 'home' %}"><h1 style="position: absolute;
+                    top: -10px;
+                    color: white;">Say<br>Thread</h1></a>
+            </div>
+
+           
+
+            <h2 class="text-center">Recupera tu contraseña</h2>
+            <form id="registro-formulario" method="POST" action="{% url 'enviarrecuperar' %}" class="validacion" novalidate>
+                <div class="primera-linea">
+                    <input name="nombre" type="text" class="formulario" id="nombre-input" placeholder="{% if error %}Nombre invalido{% else %}Nombre{% endif %}" required>
+                </div>
+                <div class="segunda-linea">
+                    <input name="nombre_usuario" type="text" class="formulario" id="nombre-usuario-input" placeholder="{% if error %}Nombre de usuario invalido{% else %}Nombre de usuario{% endif %}" required>
+                    <input name="email" type="email" class="formulario" id="email-input" placeholder="{% if error %}Correo invalido{% else %}Correo Electrónico{% endif %}" required>
+                </div>
+                <div class="cuarta-linea">
+                    <input name="fecha_nacimiento" style="top: 160px;" type="date" class="formulario" id="fecha-input" placeholder="{% if error %}Fecha invalida{% else %}Fecha de nacimiento{% endif %}" required>
+                </div>
+                <input name="rol" value="1" type="hidden" class="formulario" id="oculto" required>
+                <div class ="boton">
+                    {% csrf_token %}
+                    <button type="submit" class="registrar">Recuperar</button>
+                </div>
+            </form>
+
+            <h7 class ="ir-registro" style="left: 755px;">Volver a iniciar sesión <span id = "ir-registro"><a href="{% url 'inicio' %}" style="color: rgb(210, 210, 210);">aquí</a></span></h7>
+            <h7 class ="ir-registro" style="left: 550px; top: 230px;">
+                {% if error %}
+
+                {% else %}
+                    Tu contraseña es: <span id = "ir-registro"><a style="color: rgb(210, 210, 210);">{{ contrasena }}</a></span>
+                {% endif %}
+            </h7>
+        </div>
+        
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>

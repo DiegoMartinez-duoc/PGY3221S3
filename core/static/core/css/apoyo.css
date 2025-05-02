@@ -1,0 +1,615 @@
+/* * {
+    user-select: none;  
+} */
+
+* {
+    user-select: none;  
+    box-sizing: border-box;
+}
+
+/* body {
+    background-color: black;
+    margin: 0rem;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+} */
+
+body {
+    background-color: black;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+
+#juegos > .imagen {
+    width: 70vmin;
+    height: 56vmin;
+    object-fit: cover;
+    object-position: center;
+    pointer-events: none;
+}
+
+/* #juegos {
+    display: flex;
+    gap: 4vmin;
+    position: absolute;
+    left: 750px;
+    top: 300px;
+    transform: translate(-50%, -50%);
+   
+} */
+
+#juegos {
+    display: flex;
+    gap: 4vmin;
+    margin: 50px auto;
+    width: 100%;
+    max-width: 1400px;
+    overflow-x: auto;
+    padding: 20px 0;
+    scrollbar-width: none;
+   
+    margin-left: 750px;
+    margin-top: 225px;
+    transform: translate(-50%, -50%);
+}
+
+#nombre-juego-1 {
+    display: block;
+    margin: 20px auto;
+    width: 400px;
+    height: 90px;
+    padding: 15px 30px;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 72px;
+    top: 400px;
+    background-color: black;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+
+#nombre-juego-2 {
+    display: block;
+    margin: 20px auto;
+    width: 400px;
+    height: 90px;
+    padding: 15px 30px;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 545px;
+    top: 400px;
+    background-color: black;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#nombre-juego-3 {
+    display: block;
+    margin: 20px auto;
+    width: 400px;
+    height: 90px;
+    padding: 15px 30px;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 1022px;
+    top: 400px;
+    background-color: black;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#nombre-juego-1:hover {
+    background-color: rgb(85, 83, 83);
+    transform: scale(1.05);
+}
+
+#nombre-juego-2:hover {
+    background-color: rgb(85, 83, 83);
+    transform: scale(1.05);
+}
+
+#nombre-juego-3:hover {
+    background-color: rgb(85, 83, 83);
+    transform: scale(1.05);
+}
+
+/* #otros-juegos {
+    position: absolute;
+    border-top: 1px solid rgb(100, 100, 100);
+    background-color: #404040;
+    border-bottom: 1px solid rgb(100, 100, 100);
+    top: 600px;
+} */
+
+#otros-juegos {
+    width: 100%;
+    background-color: #404040;
+    border-top: 1px solid rgb(100, 100, 100);
+    border-bottom: 1px solid rgb(100, 100, 100);
+    margin-top: -200px;
+    padding: 20px 0;
+}
+
+/* .contenedor-hilos {
+    display: flex;          
+    gap: 20px;              
+    justify-content: center;
+    flex-wrap: wrap;        
+    margin: 10px;
+    width: 1520px;
+    
+} */
+
+.contenedor-hilos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 0 15px;
+    max-width: 1520px;
+    margin: 0 auto;
+}
+
+
+/* footer {
+    display: flex;
+    position: absolute;
+    top: 1548px;
+    width: 1750px;
+    height: 180px;
+    left: -100px;
+    background-color: black;
+    
+}
+
+footer h5 {
+    color: white;
+}
+
+footer h6 {
+    color: white;
+} */
+
+
+/* #otros-juegos > h1 {
+    color: white;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+} */
+
+#otros-juegos > h1 {
+    color: white;
+    margin: 20px 0 20px 5%;
+}
+
+/* .caja-hilo {
+    background-color: rgb(85, 83, 83);
+    width: 420px;
+    height: 420px; 
+    position: relative; 
+    overflow: hidden; 
+    border-radius: 10px;
+    border: 1px solid black;
+} */
+
+.caja-hilo {
+    background-color: rgb(85, 83, 83);
+    width: calc(33.33% - 20px);
+    max-width: 420px;
+    height: 420px;
+    border-radius: 10px;
+    border: 1px solid black;
+    position: relative;
+    padding: 20px;
+}
+
+.fila-reversa {
+    flex-direction: row-reverse; 
+    direction: rtl; 
+}
+
+
+/* .caja-hilo > .imagen {
+    position: absolute; 
+    top: 60px; 
+    left: 20px; 
+    width: 200px; 
+    height: 200px; 
+    object-fit: cover;
+} */
+
+.caja-hilo > .imagen {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    
+    margin-top: 10px;
+}
+
+
+/* .caja-hilo > .nombre_thread {
+    font-size: 20px;
+    position: absolute;
+    left: 25px; 
+    color: white;
+    margin-top: 8px;
+} */
+
+.caja-hilo > .nombre_thread {
+    color: white;
+    font-size: 20px;
+    margin: 0 0 10px 0;
+}
+
+/* .caja-hilo > .resumen {
+    font-size: 15px;
+    position: absolute;
+    white-space: pre-line;
+    left: 20px;
+    top: 250px;
+    color: white;
+   
+} */
+.caja-hilo > .resumen {
+    color: white;
+    font-size: 15px;
+    margin: 0;
+    height: 100px;
+    overflow: hidden;
+}
+
+.caja-hilo > .foro-info {
+    position: absolute;
+    white-space: pre-line;
+    left: 1250px;
+    top: 30px;
+}
+
+.caja-hilo > .boton-borrar {
+    display: block;
+    margin: 20px auto;
+    width: 150px;
+    padding: 5px 15px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 250px;
+    top: 80px;
+    background-color: #404040;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+
+
+.caja-hilo > .boton-foro {
+    display: block;
+    margin: 20px auto;
+    width: 150px;
+    padding: 5px 15px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 250px;
+    top: 140px;
+    background-color: #404040;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.caja-hilo > .boton-borrar:hover {
+    background-color: black;
+}
+
+.caja-hilo > .boton-foro:hover {
+    background-color: black;
+}
+
+.caja-hilo > .boton-like {
+    display: block;
+    margin: 20px auto;
+    width: 50px;
+    padding: 5px 15px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 250px;
+    top: 200px;
+    background-color: #404040;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.caja-hilo > .boton-like:hover {
+    background-color: black;
+}
+
+.boton-like > .icono {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 8px;
+}
+
+.caja-hilo > #cantidad-like {
+    position: absolute;
+    left: 310px;
+    top: 230px;
+    color: white;
+}
+
+
+
+
+
+/* nav {
+    background-color: rgb(85, 83, 83);
+    min-height: 50px;
+    border-bottom: 1px solid rgb(100, 100, 100);
+    color: white;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 0 20px; 
+} */
+
+nav {
+    background-color: rgb(85, 83, 83);
+    min-height: 50px;
+    border-bottom: 1px solid rgb(100, 100, 100);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* .titulo {
+    display: flex;
+    align-items: center; 
+}
+
+.titulo > h1 {
+    position: absolute;
+    font-size: 23.85px;
+    top: 9px;
+    
+    font-family: serif;
+    font-weight: bold;
+} */
+
+.titulo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.titulo > h1 {
+    font-size: 23px;
+    font-family: serif;
+    font-weight: bold;
+    margin-left: -75px;
+}
+
+/* .right-nav {
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+} */
+
+.right-nav {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: auto;
+}
+
+/* #logo-imagen {
+    width: 80px; 
+    height: auto;
+    margin-right: 10px; 
+} */
+
+#logo-imagen {
+    width: 60px;
+    height: auto;
+}
+
+.centro-nav {
+    order: 3;
+    width: 100%;
+    margin: 0;
+}
+
+/* .right-nav > button, a button {
+    display: block;
+    margin: 20px auto;
+    width: 150px;
+    padding: 5px 15px;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    
+    background-color: #404040;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+} */
+
+.right-nav button, a button {
+    background-color: #404040;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    padding: 8px 15px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.right-nav > button:hover {
+    background-color: black;
+}
+
+.right-nav > a button:hover {
+    background-color: black;
+}
+
+.right-nav > #perfil {
+    width: 150px;
+    background-color: #404040;
+    border-radius: 10px;
+}
+
+
+
+#perfil > img {
+    width: 40px;
+}
+
+#perfil > h7 {
+    position: absolute;
+    top: 22px;
+    margin: 5px;
+}
+
+/* .buscador {
+    display: block;
+    margin: 20px auto 20px 180px;
+    width: 450px;
+    padding: 10px 10px 10px 35px;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    background: url('../img/buscarIcon.png') no-repeat left 10px center;
+    background-size: 20px; 
+    background-color: #404040;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+} */
+
+.buscador {
+    width: 100%;
+    padding: 10px 10px 10px 35px;
+    font-size: 12px;
+    background: url('../img/buscarIcon.png') no-repeat left 10px center/20px;
+    background-color: #404040;
+    border: none;
+    border-radius: 10px;
+    color: white;
+}
+
+@media (max-width: 1200px) {
+    .caja-hilo {
+        width: calc(50% - 20px);
+    }
+    
+    #juegos > .imagen {
+        width: 250px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        justify-content: center;
+    }
+    
+    .titulo > h1 {
+        font-size: 18px;
+    }
+    
+    #logo-imagen {
+        width: 50px;
+    }
+    
+    .caja-hilo {
+        width: 100%;
+        max-width: none;
+        height: auto;
+        min-height: 400px;
+    }
+    
+    #juegos {
+        margin: 30px auto;
+    }
+    
+    #juegos > .imagen {
+        width: 200px;
+        height: 160px;
+    }
+    
+    #nombre-juego {
+        height: 70px;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .right-nav {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .boton-foro, .boton-like {
+        position: static;
+        margin-top: 10px;
+        width: 100%;
+    }
+    
+    .caja-hilo {
+        padding: 15px;
+    }
+    
+    .caja-hilo > .imagen {
+        width: 100%;
+        height: 150px;
+    }
+}
